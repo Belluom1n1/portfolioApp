@@ -79,9 +79,9 @@ layout = dbc.Container(
                                                         html.Hr(style={"width": "88%"}),
                                                         dcc.Markdown(
                                                             """
-                                                * brianbelluomini@me.com
+                                                * < EMAIL ADDRESS >
 
-                                                * bbelluomini@csus.edu
+                                                * < EMAIL ADDRESS >
                                                          """,
                                                             id="body-text",
                                                         ),
