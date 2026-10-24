@@ -12,7 +12,7 @@ import dash_bootstrap_components as dbc
 import dash_mantine_components as dmc
 
 # + --- photo source --- +
-myPhoto = ""
+myPhoto = " <ADD PATH> "
 
 
 # + --- layout --- +
