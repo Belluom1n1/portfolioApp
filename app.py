@@ -2,7 +2,7 @@
 #  visit http://127.0.0.1:8050/ in your web browser.
 
 import dash
-from dash import State, callback, Dash, Input, Output
+from dash import State, callback, Dash, Input, Output, clientside_callback
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
@@ -117,6 +117,17 @@ def toggle_navbar(opened, navbar):
     navbar["collapsed"] = {"mobile": not opened}
     return navbar
 
+
+clientside_callback(
+    """
+    (switchOn) => {
+       document.documentElement.setAttribute('data-mantine-color-scheme', switchOn ? 'dark' : 'light');
+       return window.dash_clientside.no_update
+    }
+    """,
+    Output("color-scheme-toggle", "id"),
+    Input("color-scheme-toggle", "checked"),
+)
 
 if __name__ == "__main__":
     app.run(debug=True)
